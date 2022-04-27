@@ -42,7 +42,7 @@ func main() {
 
 	//fmt.Printf("update person: %#v\n", pers)
 
-	var acc Account = Account{
+	var acc = Account{
 		Id:   1,
 		Name: "tpavel",
 		Person: Person{

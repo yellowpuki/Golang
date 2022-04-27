@@ -22,7 +22,7 @@ func main() {
 }
 
 func fibonacci(n int) int {
-	var first, second int = 1, 1
+	var first, second = 1, 1
 
 	for i := 1; i <= n; i++ {
 		first, second = second, first+second

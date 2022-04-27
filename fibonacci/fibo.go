@@ -26,7 +26,7 @@ func fibo(n int) int {
 
 func main() {
 	var (
-		f1, f2, nom, flag int = 0, 1, 1, 0
+		f1, f2, nom, flag = 0, 1, 1, 0
 		t, fib            int
 	)
 	fmt.Scan(&fib)

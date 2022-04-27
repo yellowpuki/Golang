@@ -17,7 +17,7 @@ type Account struct {
 }
 
 func main() {
-	var acc Account = Account{
+	var acc = Account{
 		Id:   1,
 		Name: "Pavel",
 		Person: Person{
