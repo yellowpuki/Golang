@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/github.com/aclements/perflock" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/github.com/golang/protobuf" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/goServ" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/google.golang.org/protobuf" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/instack" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sorting" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tz_nastavnik" vcs="Git" />
+  </component>
+</project>
