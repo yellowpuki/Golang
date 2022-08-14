@@ -16,6 +16,6 @@ func main() {
 		workArray[x], workArray[y] = workArray[y], workArray[x]
 	}
 	for idx := range workArray {
-		fmt.Printf("%3d ", workArray[idx])
+		fmt.Printf("%d ", workArray[idx])
 	}
 }
