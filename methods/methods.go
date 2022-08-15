@@ -40,7 +40,7 @@ func main() {
 	pers := new(Person)
 	pers.SetName("Pavel Timokhovich")
 
-	//fmt.Printf("update person: %#v\n", pers)
+	fmt.Printf("update person: %#v\n", pers)
 
 	var acc = Account{
 		Id:   1,
