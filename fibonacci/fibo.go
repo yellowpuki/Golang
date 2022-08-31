@@ -34,10 +34,10 @@ func main() {
 		t, f1, f2 = f1+f2, f2, t
 		nom += 1
 		if f2 == fib {
-			fmt.Printf("%d\n", nom)
+			fmt.Printf("%d", nom)
 			flag = 1
 		} else if f2 > fib {
-			fmt.Print(-1, "\n")
+			fmt.Print(-1)
 			flag = 1
 		}
 	}
