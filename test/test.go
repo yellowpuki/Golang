@@ -22,6 +22,7 @@ func main() {
 
 	fmt.Println(recSum([]int{2, 4, 6}))
 	fmt.Println(countEl([]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 0}))
+	fmt.Println(maxEl([]int{12, 2, 3, 4, 5, 6, 7, 8, 9, 0}))
 }
 
 func fibonacci(n int) int {
@@ -47,4 +48,19 @@ func countEl(a []int) int {
 	}
 
 	return 1 + countEl(a[1:])
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+func maxEl(a []int) int {
+	if len(a) == 1 {
+		return a[0]
+	}
+
+	return max(a[len(a)-1], maxEl(a[:len(a)-1]))
 }
