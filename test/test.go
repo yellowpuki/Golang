@@ -20,12 +20,14 @@ func main() {
 	// 	fmt.Printf("%d ", fibonacci(i))
 	// }
 
-	a := []int{12, 2, 3, 4, 5, 6, 7, 8, 9, 0}
+	a := []int{12, 22, 3, 14, 5, 16, 7, -8, 9, 0}
 
 	fmt.Println(recSum([]int{2, 4, 6}))
 	fmt.Println(countEl([]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 0}))
 	fmt.Println(maxEl([]int{12, 2, 3, 4, 5, 6, 7, 8, 9, 0}))
 	fmt.Println(binSearchRec(a, 0, len(a)-1, 2))
+	fmt.Println(quickSort(a))
+
 }
 
 func fibonacci(n int) int {
@@ -37,6 +39,9 @@ func fibonacci(n int) int {
 	return first
 }
 
+// -----------------------------
+// recSum ...
+// -----------------------------
 func recSum(a []int) int {
 	if len(a) == 0 {
 		return 0
@@ -45,6 +50,9 @@ func recSum(a []int) int {
 	return a[0] + recSum(a[1:])
 }
 
+// -----------------------------
+// countEl ...
+// -----------------------------
 func countEl(a []int) int {
 	if len(a) == 0 {
 		return 0
@@ -53,6 +61,9 @@ func countEl(a []int) int {
 	return 1 + countEl(a[1:])
 }
 
+// -----------------------------
+// max ...
+// -----------------------------
 func max(a, b int) int {
 	if a > b {
 		return a
@@ -60,6 +71,9 @@ func max(a, b int) int {
 	return b
 }
 
+// -----------------------------
+// maxEl ...
+// -----------------------------
 func maxEl(a []int) int {
 	if len(a) == 1 {
 		return a[0]
@@ -68,6 +82,9 @@ func maxEl(a []int) int {
 	return max(a[len(a)-1], maxEl(a[:len(a)-1]))
 }
 
+// -----------------------------
+// binSearchRec ...
+// -----------------------------
 func binSearchRec(a []int, low int, hi int, target int) int {
 	if low > hi {
 		return -1
@@ -83,4 +100,37 @@ func binSearchRec(a []int, low int, hi int, target int) int {
 	}
 
 	return binSearchRec(a, mid+1, hi, target)
+}
+
+// -----------------------------
+// quickSort ...
+// -----------------------------
+func quickSort(a []int) []int {
+	if len(a) < 2 {
+
+		return a
+	}
+
+	if len(a) == 2 {
+		left, right := 0, len(a)-1
+		if a[left] > a[right] {
+			a[left], a[right] = a[right], a[left]
+		}
+
+		return a
+	}
+
+	pivot := a[0]
+	var less, greater []int
+
+	for i := range a {
+		if a[i] < pivot {
+			less = append(less, a[i])
+		}
+		if a[i] > pivot {
+			greater = append(greater, a[i])
+		}
+	}
+
+	return append(append(quickSort(less), pivot), quickSort(greater)...)
 }
