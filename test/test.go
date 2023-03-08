@@ -21,6 +21,7 @@ func main() {
 	// }
 
 	fmt.Println(recSum([]int{2, 4, 6}))
+	fmt.Println(countEl([]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 0}))
 }
 
 func fibonacci(n int) int {
@@ -38,4 +39,12 @@ func recSum(a []int) int {
 	}
 
 	return a[0] + recSum(a[1:])
+}
+
+func countEl(a []int) int {
+	if len(a) == 0 {
+		return 0
+	}
+
+	return 1 + countEl(a[1:])
 }
