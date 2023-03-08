@@ -19,5 +19,5 @@ func main() {
 	fmt.Scan(&a)
 	fmt.Println("введите второе число:")
 	fmt.Scan(&b)
-	fmt.Printf("NOD of %d and %d = %d", a, b, euclidGcd(a, b))
+	fmt.Printf("NOD of %d and %d = %d\n", a, b, euclidGcd(a, b))
 }
