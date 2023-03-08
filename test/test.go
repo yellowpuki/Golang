@@ -20,9 +20,12 @@ func main() {
 	// 	fmt.Printf("%d ", fibonacci(i))
 	// }
 
+	a := []int{12, 2, 3, 4, 5, 6, 7, 8, 9, 0}
+
 	fmt.Println(recSum([]int{2, 4, 6}))
 	fmt.Println(countEl([]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 0}))
 	fmt.Println(maxEl([]int{12, 2, 3, 4, 5, 6, 7, 8, 9, 0}))
+	fmt.Println(binSearchRec(a, 0, len(a)-1, 2))
 }
 
 func fibonacci(n int) int {
@@ -63,4 +66,21 @@ func maxEl(a []int) int {
 	}
 
 	return max(a[len(a)-1], maxEl(a[:len(a)-1]))
+}
+
+func binSearchRec(a []int, low int, hi int, target int) int {
+	if low > hi {
+		return -1
+	}
+	mid := (hi + low) / 2
+
+	if target == a[mid] {
+		return mid
+	}
+
+	if target < a[mid] {
+		return binSearchRec(a, low, mid-1, target)
+	}
+
+	return binSearchRec(a, mid+1, hi, target)
 }
