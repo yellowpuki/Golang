@@ -38,7 +38,7 @@ func (ss *SliceStack[T]) Pop() (T, error) {
 
 func (ss *SliceStack[T]) String() string {
 	if ss.IsEmpty() {
-		return "stack is empty"
+		return fmt.Sprintf("%T is empty", ss)
 	}
 	str := ""
 	for _, v := range ss.st {
@@ -48,17 +48,25 @@ func (ss *SliceStack[T]) String() string {
 }
 
 func main() {
-	st := NewSliceStack[int]()
+	stI := NewSliceStack[int]()
+	stS := NewSliceStack[string]()
 
-	fmt.Println(st)
+	fmt.Println(stI)
+	fmt.Println(stS)
 
-	st.Push(1)
-	st.Push(2)
-	st.Push(3)
-	fmt.Println(st)
+	stI.Push(1)
+	stS.Push("Hello")
+	stI.Push(2)
+	stS.Push("World")
+	stI.Push(3)
+	stS.Push("!")
+	fmt.Println(stI)
+	fmt.Println(stS)
 
-	for !st.IsEmpty() {
-		st.Pop()
-		fmt.Println(st)
+	for !stI.IsEmpty() && !stS.IsEmpty() {
+		stI.Pop()
+		stS.Pop()
+		fmt.Println(stI)
+		fmt.Println(stS)
 	}
 }
