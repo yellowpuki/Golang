@@ -14,7 +14,7 @@ func f1() {
 	f2()
 
 	fmt.Println("End f1")
-}
+} 
 
 func f2() {
 	fmt.Println("Start f2")
