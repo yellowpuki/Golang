@@ -9,42 +9,57 @@ import (
 var testCases = []struct {
 	name  string
 	input string
-	exp  bool
+	exp   bool
 }{
 	{
 		name:  "Test1",
 		input: "{}",
-		exp:  true,
+		exp:   true,
 	},
 	{
 		name:  "Test2",
 		input: "",
-		exp:  true,
+		exp:   true,
 	},
 	{
 		name:  "Test3",
 		input: "{",
-		exp:  false,
+		exp:   false,
 	},
 	{
 		name:  "Test4",
 		input: "{[(",
-		exp:  false,
+		exp:   false,
 	},
 	{
 		name:  "Test5",
 		input: "{[()",
-		exp:  false,
+		exp:   false,
 	},
 	{
 		name:  "Test6",
 		input: "{[]()",
-		exp:  false,
+		exp:   false,
 	},
 	{
 		name:  "Test7",
 		input: "{[]()}",
-		exp:  true,
+		exp:   true,
+	},
+	{
+		name:  "Test8",
+		input: "][",
+		exp:   false,
+	},
+	{
+		name:  "Test9",
+		input: "}{",
+		exp:   false,
+	},
+	{
+		name:  "Test10",
+		input: ")(",
+		exp:   false,
 	},
 }
 
