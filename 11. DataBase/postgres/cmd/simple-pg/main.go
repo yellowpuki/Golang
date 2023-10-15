@@ -27,6 +27,7 @@ func main() {
 	// TODO: Server
 }
 
+// setupLogger ...
 func setupLogger(env string) *slog.Logger {
 	var log *slog.Logger
 

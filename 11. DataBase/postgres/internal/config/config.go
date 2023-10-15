@@ -8,18 +8,19 @@ import (
 	"github.com/ilyakaznacheev/cleanenv"
 )
 
+// Config ...
 type Config struct {
-	Env         string `yaml:"env" envDefault:"local"`
-	StoragePath string `yaml:"storage_path" envRequired:"true"`
+	Env         string `yaml:"env" env-default:"local"`
+	StoragePath string `yaml:"storage_path" env-required:"true"`
 	HTTPServer  `yaml:"http_server" `
 }
 
+// HTTPServer ...
 type HTTPServer struct {
-	Address     string        `yaml:"address" envDefault:"localhost:8081"`
-	Timeout     time.Duration `yaml:"timeout" envDefault:"4s"`
-	IdleTimeout time.Duration `yaml:"idle_timeout" envDefault:"60s"`
+	Address     string        `yaml:"address" env-default:"localhost:8081"`
 }
 
+// MustLoad load configuration.
 func MustLoad() *Config {
 	configPath := os.Getenv("CONFIG_PATH")
 
